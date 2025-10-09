@@ -34,9 +34,6 @@ public class BankAccountOwnerXmlSerialization implements Serialization {
 
     @Override
     public String serialization(Object bankAccountOwner) {
-        if (!(bankAccountOwner instanceof BankAccountOwner)) {
-            throw new RuntimeException("BankAccountOwner must be an instance of BankAccountOwner");
-        }
         BankAccountOwner owner = (BankAccountOwner) bankAccountOwner;
         BankAccountOwnerData data = new BankAccountOwnerData(
                 owner.getUuid(), owner.getFirstName(), owner.getLastName()
