@@ -1,13 +1,13 @@
-package org.example.persons.customers;
+package org.example.persons;
 
-public class Customer {
+public class BankAccountOwner {
 
     private String uuid;
 
     private String firstName;
     private String lastName;
 
-    public Customer(String uuid, String firstName, String lastName) {
+    public BankAccountOwner(String uuid, String firstName, String lastName) {
         this.uuid = uuid;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -23,5 +23,9 @@ public class Customer {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
     }
 }

@@ -1,24 +1,18 @@
 package org.example.accounts;
 
-import org.example.persons.customers.Customer;
+import org.example.persons.BankAccountOwner;
 
 public class SaveAccount extends BaseBankAccount {
 
-    private float interestRate;
+    private final float interestRate;
 
-    public SaveAccount(String uuid, String bankAccountNumber, Customer customer, double balance, float interestRate) {
-        super(uuid, bankAccountNumber, customer, balance);
+    public SaveAccount(String uuid, String accountNumber, BankAccountOwner owner, double balance) {
+        super(uuid, accountNumber, owner, balance);
 
-        this.interestRate = interestRate;
-    }
-
-    public SaveAccount(String uuid, String bankAccountNumber, Customer customer) {
-        this(uuid, bankAccountNumber, customer, 0, 0);
+        interestRate = 5;
     }
 
     public float getInterestRate() {
         return interestRate;
     }
-
-
 }
