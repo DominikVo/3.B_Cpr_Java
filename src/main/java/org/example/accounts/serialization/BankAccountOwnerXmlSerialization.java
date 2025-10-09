@@ -1,4 +1,3 @@
-// src/main/java/org/example/accounts/serialization/BankAccountOwnerXmlSerialization.java
 package org.example.accounts.serialization;
 
 import jakarta.xml.bind.JAXBException;
@@ -60,7 +59,6 @@ public class BankAccountOwnerXmlSerialization implements Serialization {
             StringReader stringReader = new StringReader(serializedObject);
             BankAccountOwnerData data = (BankAccountOwnerData) unmarshaller.unmarshal(stringReader);
 
-            // Map back to domain model (if needed)
             return new BankAccountOwner(data.uuid, data.firstName, data.lastName);
         } catch (JAXBException e) {
             throw new RuntimeException(e);
