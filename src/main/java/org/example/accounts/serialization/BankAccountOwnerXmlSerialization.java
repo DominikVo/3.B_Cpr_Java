@@ -35,8 +35,8 @@ public class BankAccountOwnerXmlSerialization implements Serialization {
     public String serialization(Object bankAccountOwner) {
         BankAccountOwner owner = (BankAccountOwner) bankAccountOwner;
         BankAccountOwnerData data = new BankAccountOwnerData(
-                owner.getUuid(), owner.getFirstName(), owner.getLastName()
-        );
+                owner.getUuid(), owner.getFirstName(), owner.getLastName());
+
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(BankAccountOwnerData.class);
             Marshaller marshaller = jaxbContext.createMarshaller();
@@ -45,7 +45,8 @@ public class BankAccountOwnerXmlSerialization implements Serialization {
             StringWriter stringWriter = new StringWriter();
             marshaller.marshal(data, stringWriter);
             return stringWriter.toString();
-        } catch (JAXBException e) {
+        }
+        catch (JAXBException e) {
             throw new RuntimeException(e);
         }
     }
@@ -60,7 +61,8 @@ public class BankAccountOwnerXmlSerialization implements Serialization {
             BankAccountOwnerData data = (BankAccountOwnerData) unmarshaller.unmarshal(stringReader);
 
             return new BankAccountOwner(data.uuid, data.firstName, data.lastName);
-        } catch (JAXBException e) {
+        }
+        catch (JAXBException e) {
             throw new RuntimeException(e);
         }
     }
