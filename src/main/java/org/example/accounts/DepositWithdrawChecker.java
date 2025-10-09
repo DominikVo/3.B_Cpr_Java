@@ -1,6 +1,6 @@
 package org.example.accounts;
 
-public class DepositChecker {
+public class DepositWithdrawChecker {
     private static final double LIMIT = 10000;
 
     public static boolean isLargeDeposit(double amount) {

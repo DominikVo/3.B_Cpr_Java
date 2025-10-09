@@ -6,6 +6,7 @@ import org.example.accounts.StudentAccount;
 import org.example.accounts.factories.BankAccountFactory;
 import org.example.accounts.generators.BankAccountNumberGenerator;
 import org.example.accounts.serialization.BankAccountOwnerJsonSerializationService;
+import org.example.accounts.serialization.BankAccountOwnerXmlSerialization;
 import org.example.accounts.serialization.Serialization;
 import org.example.accounts.services.BankAccountBalanceService;
 import org.example.persons.BankAccountOwner;
@@ -30,7 +31,7 @@ public class App {
             Serialization bankAccountOwnerJsonSerializationService = new BankAccountOwnerJsonSerializationService();
             bankAccountOwnerJsonSerializationService.serialization(owner);
 
-            Serialization bankAccountOwnerXmlSerializationService = new org.example.accounts.serialization.BankAccountOwnerXmlSerialization();
+            Serialization bankAccountOwnerXmlSerializationService = new BankAccountOwnerXmlSerialization();
             String serializedOwner = bankAccountOwnerXmlSerializationService.serialization(owner);
             System.out.println(serializedOwner);
             BankAccountOwner deserializedOwner = (BankAccountOwner) bankAccountOwnerXmlSerializationService.deserialization(serializedOwner);
