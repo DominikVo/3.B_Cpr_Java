@@ -9,6 +9,7 @@ import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
 import java.io.StringReader;
 import java.io.StringWriter;
+
 import org.example.persons.BankAccountOwner;
 
 public class BankAccountOwnerXmlSerialization implements Serialization {
@@ -24,7 +25,6 @@ public class BankAccountOwnerXmlSerialization implements Serialization {
         @XmlElement
         public String lastName;
 
-        public BankAccountOwnerData() {}
         public BankAccountOwnerData(String uuid, String firstName, String lastName) {
             this.uuid = uuid;
             this.firstName = firstName;
