@@ -12,4 +12,14 @@ public class DepositChecker {
             return false;
         }
     }
+
+    public static boolean isLargeWithdrawal(double amount) {
+        if(amount > LIMIT) {
+            System.out.println("Large withdrawal detected: " + amount);
+            return true;
+        } else {
+            System.out.println("Withdrawal amount is within the normal range: " + amount);
+            return false;
+        }
+    }
 }
