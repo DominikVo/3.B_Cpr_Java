@@ -34,6 +34,7 @@ public class App {
             Serialization bankAccountOwnerXmlSerializationService = new BankAccountOwnerXmlSerialization();
             String serializedOwner = bankAccountOwnerXmlSerializationService.serialization(owner);
             System.out.println(serializedOwner);
+
             BankAccountOwner deserializedOwner = (BankAccountOwner) bankAccountOwnerXmlSerializationService.deserialization(serializedOwner);
             System.out.println(deserializedOwner.getUuid() + ": " + deserializedOwner.getFullName());
 
