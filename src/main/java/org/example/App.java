@@ -3,6 +3,8 @@ package org.example;
 import org.example.accounts.BaseBankAccount;
 import org.example.accounts.SaveAccount;
 import org.example.accounts.StudentAccount;
+import org.example.accounts.card.PaymentCard;
+import org.example.accounts.card.PaymentCardsManager;
 import org.example.accounts.factories.BankAccountFactory;
 import org.example.accounts.generators.BankAccountNumberGenerator;
 import org.example.accounts.serialization.BankAccountOwnerJsonSerializationService;
@@ -11,6 +13,9 @@ import org.example.accounts.serialization.Serialization;
 import org.example.accounts.services.BankAccountBalanceService;
 import org.example.persons.BankAccountOwner;
 import org.example.persons.BankAccountOwnerFactory;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 public class App {
 
@@ -31,13 +36,15 @@ public class App {
             Serialization bankAccountOwnerJsonSerializationService = new BankAccountOwnerJsonSerializationService();
             bankAccountOwnerJsonSerializationService.serialization(owner);
 
+
+            /*
             Serialization bankAccountOwnerXmlSerializationService = new BankAccountOwnerXmlSerialization();
             String serializedOwner = bankAccountOwnerXmlSerializationService.serialization(owner);
             System.out.println(serializedOwner);
 
             BankAccountOwner deserializedOwner = (BankAccountOwner) bankAccountOwnerXmlSerializationService.deserialization(serializedOwner);
             System.out.println(deserializedOwner.getUuid() + ": " + deserializedOwner.getFullName());
-
+            */
 
             BaseBankAccount account1 = bankAccountFactory.createBaseBankAccount("base-bank-account-123", owner, 500);
             BaseBankAccount account2 = bankAccountFactory.createSavingBankAccount("saving-bank-account-123", owner, 500);
@@ -66,6 +73,15 @@ public class App {
             // account1.subtractBalance(5000);
             // bankAccountBalanceService.withdraw(account1, 5000);
             // System.out.println(account1.getUuid() + ": " + account1.getBalance());
+
+            //Cards Manager
+            PaymentCardsManager cardsManager = new PaymentCardsManager();
+
+            // Create a card
+            cardsManager.Create("4111111111111111", "John Doe", "12", "2030", "123");
+            ArrayList<PaymentCard> cards = (ArrayList<PaymentCard>) cardsManager.GetAll();
+            System.out.println("Cards count: " + cards.size());
+
 
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());

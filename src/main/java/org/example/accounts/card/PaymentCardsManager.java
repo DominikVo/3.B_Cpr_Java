@@ -1,10 +1,13 @@
+// java
 package org.example.accounts.card;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PaymentCardsManager {
 
-    private List<PaymentCard> paymentCards;
+    // Initialize the list to avoid NullPointerExceptions
+    private List<PaymentCard> paymentCards = new ArrayList<>();
 
     public void Create(String CardNumber, String CardHolderName, String ExpirationMonth, String ExpirationYear , String CVV)
     {
