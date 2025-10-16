@@ -13,6 +13,8 @@ import org.example.accounts.serialization.Serialization;
 import org.example.accounts.services.BankAccountBalanceService;
 import org.example.persons.BankAccountOwner;
 import org.example.persons.BankAccountOwnerFactory;
+import org.example.accounts.BankAccountWithPaymentCards;
+
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -82,6 +84,39 @@ public class App {
             ArrayList<PaymentCard> cards = (ArrayList<PaymentCard>) cardsManager.GetAll();
             System.out.println("Cards count: " + cards.size());
 
+            BankAccountWithPaymentCards accountWithCards;
+            if (account1 instanceof BankAccountWithPaymentCards) {
+                accountWithCards = (BankAccountWithPaymentCards) account1;
+            } else {
+                // wrap existing BaseBankAccount data into a BankAccountWithPaymentCards instance
+                accountWithCards = new BankAccountWithPaymentCards(
+                        account1.getUuid(),
+                        account1.getAccountNumber(),
+                        account1.getOwner(),
+                        account1.getBalance()
+                );
+                // optionally replace account1 reference if you want to continue using it as the wrapped account:
+                account1 = accountWithCards;
+            }
+
+            // Cards Manager
+            PaymentCardsManager cardsManager2 = new PaymentCardsManager();
+
+            // Create a standalone card
+            cardsManager.Create("4111111111111111", "John Doe", "12", "2030", "123");
+            ArrayList<PaymentCard> cards2 = (ArrayList<PaymentCard>) cardsManager.GetAll();
+            System.out.println("Cards count: " + cards.size());
+
+            // Create a card linked to accountWithCards (safe, no ClassCastException)
+            cardsManager.Create("4222222222222222", "Jane Smith", "11", "2025", "456", accountWithCards);
+            cards = (ArrayList<PaymentCard>) cardsManager.GetAll();
+            System.out.println("Cards count: " + cards.size());
+            PaymentCard card = cardsManager.findByNumber("4222222222222222");
+            if (card != null) {
+                System.out.println("Card " + card.getCardNumber() + " is linked to account with balance: " + card.getLinkedAccountBalance());
+            } else {
+                System.out.println("Card not found");
+            }
 
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
