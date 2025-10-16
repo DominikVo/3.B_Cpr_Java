@@ -28,14 +28,4 @@ public class PaymentCardsManager {
         return paymentCards;
     }
 
-    public List<PaymentCard> GetByCardNumber(String cardNumber)
-    {
-        return paymentCards.stream().filter(card -> cardNumber.equals(card.getCardNumber())).toList();
-    }
-
-    public PaymentCard FindByCardNumber(String cardNumber)
-    {
-        return paymentCards.stream().filter(card -> cardNumber.equals(card.getCardNumber())).findFirst().orElse(null);
-    }
-
 }
