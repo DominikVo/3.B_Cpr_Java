@@ -57,4 +57,5 @@ public class PaymentCard {
     public Double getLinkedAccountBalance() {
         return linkedAccount != null ? linkedAccount.getBalance() : null;
     }
+
 }

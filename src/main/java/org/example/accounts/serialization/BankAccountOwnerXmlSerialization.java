@@ -14,7 +14,7 @@ import org.example.persons.BankAccountOwner;
 public class BankAccountOwnerXmlSerialization implements Serialization {
 
     @XmlRootElement(name = "BankAccountOwner")
-    public static class BankAccountOwnerData {
+    public class BankAccountOwnerData {
         @XmlElement
         public String uuid;
 

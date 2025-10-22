@@ -3,7 +3,7 @@ package org.example.accounts;
 public class DepositWithdrawChecker {
     private static final double LIMIT = 10000;
 
-    public static boolean isLargeDeposit(double amount) {
+    public boolean isLargeDeposit(double amount) {
         if(amount > LIMIT) {
             System.out.println("Large deposit detected: " + amount);
             return true;
@@ -13,7 +13,7 @@ public class DepositWithdrawChecker {
         }
     }
 
-    public static boolean isLargeWithdrawal(double amount) {
+    public boolean isLargeWithdrawal(double amount) {
         if(amount > LIMIT) {
             System.out.println("Large withdrawal detected: " + amount);
             return true;

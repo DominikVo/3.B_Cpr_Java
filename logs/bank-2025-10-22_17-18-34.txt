@@ -1,0 +1,4 @@
+Oct 22, 2025 5:18:42 PM org.example.Logger.BankLogger info
+INFO: Starting Text UI bank demo
+Oct 22, 2025 5:19:10 PM org.example.Logger.BankLogger severe
+SEVERE: AppTUI not available or failed to start: No line found

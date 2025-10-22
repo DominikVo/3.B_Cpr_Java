@@ -1,0 +1,38 @@
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: Starting bank accounts test...
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: O-123: Tomas Pesek
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: base-bank-account-123 (1401699858) : 500.0
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: saving-bank-account-123 (6665654041) : : 500.0
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: student-bank-account-123 (3147265781) : : 500.0
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: base-bank-account-123 (1401699858) : : + 300.0
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: base-bank-account-123: 800.0
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: base-bank-account-123 (1401699858) : : + 200.0
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: base-bank-account-123: 1000.0
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: base-bank-account-123 (1401699858) : : + 100.0
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: base-bank-account-123: 1100.0
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: base-bank-account-123 (1401699858) : : - 500.0
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: base-bank-account-123: 600.0
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: Cards count: 1
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: Cards count: 2
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: Cards count: 3
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: Card 4222222222222222 is linked to account with balance: 600.0
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: base-bank-account-123 (1401699858) : : - 100.0
+Oct 22, 2025 4:45:14 PM org.example.Logger.BankLogger info
+INFO: Withdrawn 100.0 via card. New balance: 500.0

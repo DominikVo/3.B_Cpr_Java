@@ -1,0 +1,16 @@
+Oct 22, 2025 5:21:31 PM org.example.Logger.BankLogger info
+INFO: Starting Text UI bank demo
+Oct 22, 2025 5:21:53 PM org.example.Logger.BankLogger info
+INFO: Created account 2615570287 for Dominik Vobořil Vobořil balance=6000.0
+Oct 22, 2025 5:22:56 PM org.example.Logger.BankLogger info
+INFO: ACC-1761146513829 (2615570287) : : + 2000.0
+Oct 22, 2025 5:22:56 PM org.example.Logger.BankLogger info
+INFO: Deposited 2000.0 to 2615570287, newBalance=8000.0
+Oct 22, 2025 5:23:28 PM org.example.Logger.BankLogger info
+INFO: charge() called - card=0368-4039-8470-2315, amount=200.0
+Oct 22, 2025 5:23:28 PM org.example.Logger.BankLogger info
+INFO: ACC-1761146513829 (2615570287) : : - 200.0
+Oct 22, 2025 5:23:28 PM org.example.Logger.BankLogger info
+INFO: Charged 200.0 from card 0368-4039-8470-2315 (account=2615570287), newBalance=7800.0
+Oct 22, 2025 5:23:40 PM org.example.Logger.BankLogger info
+INFO: Exiting Text UI bank demo
