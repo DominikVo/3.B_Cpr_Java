@@ -28,7 +28,6 @@ public class AppTUI {
     private final PaymentCardFactory cardFactory = new PaymentCardFactory();
     private final PaymentCardManipulation manip = new PaymentCardManipulation();
 
-    // simple in-memory lists for this TUI session
     private final List<BaseBankAccount> accounts = new ArrayList<>();
 
     public void run() {
@@ -142,14 +141,12 @@ public class AppTUI {
                         found.getOwner(),
                         found.getBalance()
                 );
-                // replace in list so further ops use wrapped instance
                 accounts.remove(found);
                 accounts.add(wrapped);
                 linkAccount = wrapped;
             }
         }
 
-        // generate card using PaymentCardFactory then add to manager (keeps details consistent)
         String ownerName = (linkAccount != null) ? linkAccount.getOwner().getFullName() : "Standalone";
         PaymentCard gen = cardFactory.create(ownerName);
 
@@ -249,7 +246,6 @@ public class AppTUI {
                 .findFirst().orElse(null);
     }
 
-    // helper: ensure console output is flushed immediately
     private void flushConsole() {
         try {
             System.out.flush();

@@ -8,7 +8,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class BankLogger {
-    // move formatter before creating the singleton to avoid static init order NPE
     private static final DateTimeFormatter FILE_NAME_FMT = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
     private static final BankLogger logger = new BankLogger();
 
